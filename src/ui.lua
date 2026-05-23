@@ -66,7 +66,7 @@ for _, sect in pairs(Sections) do
 
         sect.TabBtn.BackgroundTransparency = 0
         sect.Container:TweenPosition(UDim2.new(0.5, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.2)
-        sect.Visible = true
+        sect.Container.Visible = true
 
         CurSection = sect
     end)
