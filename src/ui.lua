@@ -1,4 +1,5 @@
 local hui = gethui or get_hidden_gui
+local getexec = identifyexecutor
 local coregui = game:GetService("CoreGui")
 local userinputservice = game:GetService("UserInputService")
 local tweenservice = game:GetService("TweenService")
@@ -112,6 +113,12 @@ userinputservice.InputChanged:Connect(function(input)
         )
     end
 end)
+
+Sections.Home.Container.bugsLabel.Text = Sections.Home.Container.bugsLabel.Text:gsub("redacted", "discord.gg/vaehz")
+Sections.Home.Container.discan.Text = Sections.Home.Container.discan.Text:gsub("redacted", "discord.gg/vaehz")
+Sections.Home.Container.ythead.Text = Sections.Home.Container.ythead.Text:gsub("redacted", "YouTube")
+Sections.Home.Container.execLabel.Text = "Executor: " .. getexec()
+
 
 local gamePath = game:HttpGet(getgitpath("games") .. tostring(game.PlaceId) .. ".lua")
 if #gamePath == 0 then
