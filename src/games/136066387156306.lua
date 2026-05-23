@@ -46,7 +46,7 @@ return function(section)
 
                 local canFinish = false
                 local vfxlistener = vfxev.OnClientEvent:Connect(function(bleh, blah, yes)
-                    if yes == "StopCharge" then
+                    if yes == "StopCharge" and blah == plr.Character then
                         canFinish = traintreadev
                     end
                 end)
@@ -67,7 +67,7 @@ return function(section)
 
             while getgenv().FarmTread do
                 traintreadev:FireServer(true)
-                task.wait()
+                task.wait(1)
             end
         else
             getgenv().FarmTread = false
