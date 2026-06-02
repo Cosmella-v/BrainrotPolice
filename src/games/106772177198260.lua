@@ -1,8 +1,12 @@
+-- Reel for brainrots
+
 return function(section)
-    print("reached with king", section)
     local elements = loadstring(game:HttpGet(getgitpath("src").."elements.lua"))()
 
     local repStorage = game:GetService("ReplicatedStorage")
+    local plr = game:GetService("Players").LocalPlayer
+
+    local placeEv = game:GetService("ReplicatedStorage").RemoteHandler.Plot
 
     getgenv().Farming = false
 
@@ -18,6 +22,17 @@ return function(section)
             end
         else
             getgenv().Farming = false
+        end
+    end)
+
+    elements:Button("Dupe Brainrot InHand", section, function()
+        local char = plr.Character
+        local br = char:FindFirstChildOfClass("Tool")
+        if br and br:GetAttribute("brainrot") then
+            for plotNum = 1, 30 do
+                placeEv:FireServer("Add", "Plot" .. plotNum, br.Name)
+                task.wait()
+            end
         end
     end)
 end
