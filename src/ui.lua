@@ -161,10 +161,10 @@ for _, g in ipairs(gameList) do
 end
 
 for sect, c in pairs(creditsList) do
-    elements:CredHead(sect, Sections.Credits.Container)
+    elements:CredHead(Sections.Credits.Container, sect)
 
     for _, person in ipairs(c) do
-        elements:CredPerson(person, Sections.Credits.Container)
+        elements:CredPerson(Sections.Credits.Container, person)
     end
 end
 
