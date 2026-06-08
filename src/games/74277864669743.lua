@@ -22,6 +22,7 @@ return function(section, data)
 
     elements:Toggle("Farm Brainrots", section, setdata.farmrots, function(v)
         local dec = httpservice:JSONDecode(readfile("BrainrotPolice/Config.json"))
+        dec[tostring(game.PlaceId)] = dec[tostring(game.PlaceId)] or {}
         dec[tostring(game.PlaceId)].farmrots = v
         writefile("BrainrotPolice/Config.json", httpservice:JSONEncode(dec))
         if v then
@@ -59,6 +60,7 @@ return function(section, data)
 
     elements:Toggle("Auto Buy Speed", section, setdata.farmspeed, function(v)
         local dec = httpservice:JSONDecode(readfile("BrainrotPolice/Config.json"))
+        dec[tostring(game.PlaceId)] = dec[tostring(game.PlaceId)] or {}
         dec[tostring(game.PlaceId)].farmspeed = v
         writefile("BrainrotPolice/Config.json", httpservice:JSONEncode(dec))
         if v then
@@ -78,6 +80,7 @@ return function(section, data)
 
     elements:Toggle("Auto Equip Best", section, setdata.farmequip, function(v)
         local dec = httpservice:JSONDecode(readfile("BrainrotPolice/Config.json"))
+        dec[tostring(game.PlaceId)] = dec[tostring(game.PlaceId)] or {}
         dec[tostring(game.PlaceId)].farmequip = v
         writefile("BrainrotPolice/Config.json", httpservice:JSONEncode(dec))
         if v then
@@ -97,6 +100,7 @@ return function(section, data)
 
     elements:Toggle("Auto Collect", section, setdata.farmcollect, function(v)
         local dec = httpservice:JSONDecode(readfile("BrainrotPolice/Config.json"))
+        dec[tostring(game.PlaceId)] = dec[tostring(game.PlaceId)] or {}
         dec[tostring(game.PlaceId)].farmcollect = v
         writefile("BrainrotPolice/Config.json", httpservice:JSONEncode(dec))
         if v then
