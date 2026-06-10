@@ -1,3 +1,9 @@
+--[[
+Math for Brainrots! autocollect
+https://www.roblox.com/games/121326136128491/Math-for-Brainrots
+This game sucks so much
+Made by Cosmella
+]]
 return function(section, data)
 	local elements = loadstring(game:HttpGet(getgitpath("src").."elements.lua"))()
 	local Players = game:GetService("Players")
